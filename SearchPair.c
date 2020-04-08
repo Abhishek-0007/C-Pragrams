@@ -1,17 +1,28 @@
 //Search a pair of numbers whose sum is given (k)
 // [2, 3, 5, 6] k = 11
 #include<stdio.h>
+#include "ArrayInput.c"
 int main()
 {
+
   int i=0,j=0,k;
   //get array
-  int arr[4] = {2,3,5,6};
+  int size;
+  printf("Enter size of array: \n");
+  scanf("%d", &size);
+  int *arr;
+  arr = getInputFromUser(size);
+
+  // int arr[4] = {2,3,5,6};
   // get k
   printf("Please enter k: \n");
   scanf("%d", &k);
   //for loop
-  for(i = 0; i <= 2; i++) {
-    for(j = i + 1; j <= 3; j++) {
+  for(i = 0; i <= size - 2; i++) {
+    for(j = i + 1; j <= size - 1; j++) {
+      printf("arr[i] = %d", arr[i]);
+      printf("arr[j] = %d", arr[j]);
+
       if(arr[i] + arr[j] == k) {
         printf("%d", arr[i]);
         printf(", %d \n ", arr[j]);
